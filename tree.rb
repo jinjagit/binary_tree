@@ -11,3 +11,12 @@ class Node
     @r_child = nil
   end
 end
+
+class Tree
+  attr_reader :size
+
+  def initialize
+    @root = nil
+    @size = 0
+  end
+end

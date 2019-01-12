@@ -6,14 +6,18 @@ require './tree'
 
 ary = []
 20.times {ary << rand(99)}
+puts "input: unsorted array of #{ary.length} integers:"
 p ary
-puts "input: unsorted array of #{ary.length} integers"
+index = rand(20)
+target = ary[index]
+puts "target to find: #{target}, at index #{index}"
 
 tree = Tree.new(ary)
-puts "tree has #{tree.size} nodes"
+puts "\ntree has #{tree.size} nodes"
+
 
 puts "\ndepth first search:"
-node, count = tree.breadth_first_search(ary[7])
-puts "searched for #{ary[7]}, found #{node.value} in #{count} steps"
+node, count = tree.breadth_first_search(target)
+puts "searched #{count} nodes for #{target}, found #{node.value}"
 node, count = tree.breadth_first_search(101)
-puts "searched for 101, found nil in #{count} steps" if node == nil
+puts "searched #{count} nodes for 101, found nil" if node == nil

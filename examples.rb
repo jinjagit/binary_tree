@@ -1,6 +1,6 @@
 # simple examples of creating an unbalanced binary search tree from
 # an unsorted array and running breadth first search, depth first search,
-# recursive depth first search, and a conditional of the tree
+# recursive depth first search, and a conditional search of the tree.
 
 require './tree'
 

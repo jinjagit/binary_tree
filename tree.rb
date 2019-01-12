@@ -51,8 +51,28 @@ class Tree
 
   def build_tree(ary)
     ary.each {|e| add_node(e)} if ary != nil
-    ary
   end
+
+  def breadth_first_search(value)
+    return nil, count = 0 if @root == nil
+    queue = [@root]
+    count = 0
+    match = false
+    while queue != [] && match == false do
+      node = queue[0]
+      count += 1
+      if node.value == value
+        match = true
+      else
+        queue << node.l_child if node.l_child != nil
+        queue << node.r_child if node.r_child != nil
+      end
+      queue = queue.drop(1)
+    end
+    node = nil if match == false
+    return node, count
+  end
+
 end
 
 
@@ -61,7 +81,11 @@ end
 ary = []
 20.times {ary << rand(99)}
 p ary
-puts "input: #{ary.length} integers"
+puts "input: unsorted array of #{ary.length} integers"
 
 tree = Tree.new(ary)
 puts "tree has #{tree.size} nodes"
+node, count = tree.breadth_first_search(ary[7])
+puts "searched for #{ary[7]}, found #{node.value} in #{count} steps"
+node, count = tree.breadth_first_search(101)
+puts "searched for 101, found nil in #{count} steps" if node == nil

@@ -4,7 +4,7 @@ IN PROGRESS - Simon Tharby's solution to [Binary Tree exercise](https://www.theo
 
 I implemented separate <code>Node</code> and <code>Tree</code> classes, not only a <code>Node</code> class (as instructed), as this seemed more logical to me.
 
-My <code>Tree</code> class builds a binary search tree on initialization of a new instance, from an array passed into <code>Tree.new(ary)</code>.
+The <code>Tree</code> class builds a binary search tree on initialization of a new instance, from an array passed into <code>Tree.new(ary)</code>.
 
 ### Instructions:
 

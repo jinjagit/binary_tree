@@ -23,7 +23,7 @@ class Tree
   end
 
   def add_node(value)
-    if @root == nil
+    if @root.nil?
       @root = Node.new(value)
       @size = 1
     else
@@ -31,14 +31,14 @@ class Tree
       added = false
       while added == false do
         if value > node.value
-          if node.r_child == nil
+          if node.r_child.nil?
             node.r_child = Node.new(value)
             added = true
           else
             node = node.r_child
           end
         elsif value <= node.value
-          if node.l_child == nil
+          if node.l_child.nil?
             node.l_child = Node.new(value)
             added = true
           else
@@ -51,11 +51,11 @@ class Tree
   end
 
   def build_tree(ary)
-    ary.each {|e| add_node(e)} if ary != nil
+    ary.each {|e| add_node(e)} unless ary.nil?
   end
 
   def breadth_first_search(value)
-    return nil, count = 0 if @root == nil
+    return nil, count = 0 if @root.nil?
     queue = [@root]
     count = 0
     match = false
@@ -65,8 +65,8 @@ class Tree
       if node.value == value
         match = true
       else
-        queue << node.l_child if node.l_child != nil
-        queue << node.r_child if node.r_child != nil
+        queue << node.l_child unless node.l_child.nil?
+        queue << node.r_child unless node.r_child.nil?
       end
       queue = queue.drop(1)
     end
@@ -75,7 +75,7 @@ class Tree
   end
 
   def depth_first_search(value) #preorder dfs
-    return nil, count = 0 if @root == nil
+    return nil, count = 0 if @root.nil?
     stack = [@root]
     count = 0
     match = false
@@ -86,8 +86,8 @@ class Tree
       if node.value == value
         match = true
       else
-        stack << node.r_child if node.r_child != nil
-        stack << node.l_child if node.l_child != nil
+        stack << node.r_child unless node.r_child.nil?
+        stack << node.l_child unless node.l_child.nil?
       end
     end
     node = nil if match == false
@@ -95,7 +95,7 @@ class Tree
   end
 
   def dfs_rec(node = @root, value)
-    return nil if node == nil
+    return nil if node.nil?
     return node if node.value == value
     result = dfs_rec(node.l_child, value)
     return result unless result.nil?

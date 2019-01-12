@@ -6,7 +6,7 @@ IN PROGRESS - Simon Tharby's solution to [Binary Tree exercise](https://www.theo
   * <code>examples.rb</code> run to see examples of Tree searches
   * <code>time.rb</code> run to see measurement of time complexity of searches
 
-I implemented separate <code>Node</code> and <code>Tree</code> classes, not only a <code>Node</code> class (as instructed), as this seemed more logical to me.
+I implemented separate <code>Node</code> and <code>Tree</code> classes, rather than only a <code>Node</code> class (as instructed), as this seemed more logical to me.
 
 The <code>Tree</code> class builds a binary search tree on initialization of a new instance, from an array passed into <code>Tree.new(ary)</code>.
 

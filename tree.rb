@@ -73,4 +73,24 @@ class Tree
     return node, count
   end
 
+  def depth_first_search(value) #preorder dfs
+    return nil, count = 0 if @root == nil
+    stack = [@root]
+    count = 0
+    match = false
+    while stack != [] && match == false do
+      node = stack[-1]
+      stack.pop
+      count += 1
+      if node.value == value
+        match = true
+      else
+        stack << node.r_child if node.r_child != nil
+        stack << node.l_child if node.l_child != nil
+      end
+    end
+    node = nil if match == false
+    return node, count
+  end
+
 end

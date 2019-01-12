@@ -16,8 +16,14 @@ tree = Tree.new(ary)
 puts "\ntree has #{tree.size} nodes"
 
 
-puts "\ndepth first search:"
+puts "\nbreadth first search:"
 node, count = tree.breadth_first_search(target)
 puts "searched #{count} nodes for #{target}, found #{node.value}"
 node, count = tree.breadth_first_search(101)
+puts "searched #{count} nodes for 101, found nil" if node == nil
+
+puts "\ndepth first search:"
+node, count = tree.depth_first_search(target)
+puts "searched #{count} nodes for #{target}, found #{node.value}"
+node, count = tree.depth_first_search(101)
 puts "searched #{count} nodes for 101, found nil" if node == nil

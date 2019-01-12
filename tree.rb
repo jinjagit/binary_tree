@@ -18,7 +18,6 @@ class Tree
   def initialize(ary = nil)
     @root = nil
     @size = 0
-    @ary = ary
     build_tree ary
   end
 
@@ -51,8 +50,7 @@ class Tree
   end
 
   def build_tree(ary)
-    return nil if ary == nil
-    ary.each {|e| add_node(e)}
+    ary.each {|e| add_node(e)} if ary != nil
     ary
   end
 end

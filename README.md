@@ -20,7 +20,7 @@ As expected, using breadth or depth first searches resulted in an average of n/2
 
 You’ll build a simple binary tree data structure from some arbitrary input and also the “crawler” function that will locate data inside of it.
 
-1.  Build a class <code>Node</code>. It should have a value that it stores and also links to its parent and children (if they exist) [**note: I found links to parents unnecessary, and thus only used links to child nodes**]. Build getters and setters for it (e.g. parent node, child node(s)).
+1.  Build a class <code>Node</code>. It should have a value that it stores and also links to its parent and children (if they exist) [**note: I found links to parents to be unnecessary, and thus only used links to child nodes**]. Build getters and setters for it (e.g. parent node, child node(s)).
 2. Write a method <code>build_tree</code> which takes an array of data (e.g. [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]) and turns it into a binary tree full of <code>Node</code> objects appropriately placed. Start by assuming the array you get is sorted.
 3. Now refactor your <code>build_tree</code> to handle data that isn’t presorted and cannot be easily sorted prior to building the tree. You’ll need to figure out how to add a node for each of the possible cases (e.g. if it’s a leaf versus in the middle somewhere).
 4. Write a simple script that runs <code>build_tree</code> so you can test it out.

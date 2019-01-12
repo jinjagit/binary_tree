@@ -1,4 +1,4 @@
-# Binary Tree - Simon Tharby, 2019
+# Unbalanced Binary Search Tree - Simon Tharby, 2019
 # structure (relative data values); l_child <= parent, r_child > parent
 
 class Node
@@ -94,7 +94,7 @@ class Tree
     return node, count
   end
 
-  def dfs_rec(node = @root, value)
+  def dfs_rec(node = @root, value) # recursive dfs
     return nil if node.nil?
     return node if node.value == value
     result = dfs_rec(node.l_child, value)
@@ -132,7 +132,5 @@ class Tree
     else
       return node, count
     end
-
   end
-
 end

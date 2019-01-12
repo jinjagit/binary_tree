@@ -37,11 +37,11 @@ conditional_search = []
   conditional_search << count / 200.0
 end
 
-ary_average = ary_search.inject(0){|sum,x| sum + x } / 1000.0
-bfs_average = bfs_search.inject(0){|sum,x| sum + x } / 1000.0
-dfs_average = dfs_search.inject(0){|sum,x| sum + x } / 1000.0
-dfs_rec_average = dfs_rec_search.inject(0){|sum,x| sum + x } / 1000.0
-conditional_average = conditional_search.inject(0){|sum,x| sum + x } / 1000.0
+ary_average = (ary_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
+bfs_average = (bfs_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
+dfs_average = (dfs_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
+dfs_rec_average = (dfs_rec_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
+conditional_average = (conditional_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
 
 puts "        array search v / n = #{ary_average}"
 puts "breadth first search v / n = #{bfs_average}"
@@ -51,11 +51,12 @@ puts "  conditional search v / n = #{conditional_average}"
 
 # --------------------- example output --------------------------------
 
-# =>         array search v / n = 0.46781499999999965
-# => breadth first search v / n = 0.48208999999999963
-# =>   depth first search v / n = 0.5117750000000004
-# =>        recursive dfs v / n = 0.48771999999999976
-# =>   conditional search v / n = 0.04306500000000002
+# =>         array search v / n = 0.473
+# => breadth first search v / n = 0.489
+# =>   depth first search v / n = 0.497
+# =>        recursive dfs v / n = 0.473
+# =>   conditional search v / n = 0.043
+
 
 # over multiple runs only the conditional method varies much from v / n = 0.5
 # and by a lot! (over 10 times 'faster' in terms of operations)

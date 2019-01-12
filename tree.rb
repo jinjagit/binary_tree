@@ -13,11 +13,12 @@ class Node
 end
 
 class Tree
-  attr_reader :size
+  attr_reader :size, :root
 
   def initialize(ary = nil)
     @root = nil
     @size = 0
+    @rec_count = 0
     build_tree ary
   end
 
@@ -91,6 +92,22 @@ class Tree
     end
     node = nil if match == false
     return node, count
+  end
+
+  def dfs_rec(node = @root, value)
+    return nil if node == nil
+    return node if node.value == value
+    result = dfs_rec(node.l_child, value)
+    return result unless result.nil?
+    @count += 1 # counter for analysis, not needed for search
+    dfs_rec(node.r_child, value)
+  end
+
+  # return dfs_rec result and number of times dfs_rec called itself
+  def dfs_rec_count(value)
+    @count = 0
+    node = dfs_rec(value)
+    return node, @count
   end
 
 end

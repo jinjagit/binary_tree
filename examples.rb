@@ -27,3 +27,9 @@ node, count = tree.depth_first_search(target)
 puts "searched #{count} nodes for #{target}, found #{node.value}"
 node, count = tree.depth_first_search(101)
 puts "searched #{count} nodes for 101, found nil" if node == nil
+
+puts "\ndepth first recursive search:"
+node, count = tree.dfs_rec_count(target)
+puts "searched #{count} nodes for #{target}, found #{node.value}"
+node, count = tree.dfs_rec_count(101)
+puts "searched #{count} nodes for 101, found nil" if node == nil

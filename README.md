@@ -1,4 +1,4 @@
-IN PROGRESS - Simon Tharby's solution to [Binary Tree exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
+Simon Tharby's solution to [Binary Tree exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
 
 ### My Implementation (divergence from, & additions to, instructions):
 
@@ -9,6 +9,12 @@ IN PROGRESS - Simon Tharby's solution to [Binary Tree exercise](https://www.theo
 I implemented separate <code>Node</code> and <code>Tree</code> classes, rather than only a <code>Node</code> class (as instructed), as this seemed more logical to me.
 
 The <code>Tree</code> class builds a binary search tree on initialization of a new instance, from an array passed into <code>Tree.new(ary)</code>.
+
+Although the exercise of building searches (breadth or depth first) that search all nodes is interesting and challenging, using such a search does not leverage the structure that is created when building the (unbalanced tree). Thus, I also wrote a conditional search that takes advantage of the tree structure.
+
+I measured the the time complexity by comparing all search methods over multiple searches (see <code>time.rb</code>). This is why all my search methods contain a counter (to count the number of nodes visited in finding a target value).
+
+As expected, using breadth or depth first searches resulted in an average of n/2 operations (if you have no guide as to where a value might be / not be, on average you will find it half-way though a search of all elements). The conditional search was much faster (more than 10 times less elements searched for arrays of 200 elements). This roughly confirms the expected Ologn result expected (vs n/2 for the slower search methods).
 
 ### Instructions:
 

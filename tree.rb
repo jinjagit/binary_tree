@@ -57,7 +57,7 @@ class Tree
   def breadth_first_search(value)
     return nil, count = 0 if @root.nil?
     queue = [@root]
-    count = 0
+    count = 0 # counter for analysis, not needed for search
     match = false
     while queue != [] && match == false do
       node = queue[0]
@@ -77,7 +77,7 @@ class Tree
   def depth_first_search(value) #preorder dfs
     return nil, count = 0 if @root.nil?
     stack = [@root]
-    count = 0
+    count = 0 # counter for analysis, not needed for search
     match = false
     while stack != [] && match == false do
       node = stack[-1]

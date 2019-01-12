@@ -110,4 +110,29 @@ class Tree
     return node, @count
   end
 
+  def conditional_search(value)
+    return nil, count = 0 if @root.nil?
+    node = @root
+    match = false
+    count = 0
+    while match == false do
+      count += 1
+      if node.value == value
+        match = true
+      elsif node.value > value
+        return nil if node.l_child.nil?
+        node = node.l_child
+      elsif node.value < value
+        return nil if node.r_child.nil?
+        node = node.r_child
+      end
+    end
+    if match == false
+      return nil, count
+    else
+      return node, count
+    end
+
+  end
+
 end

@@ -33,3 +33,9 @@ node, count = tree.dfs_rec_count(target)
 puts "searched #{count} nodes for #{target}, found #{node.value}"
 node, count = tree.dfs_rec_count(101)
 puts "searched #{count} nodes for 101, found nil" if node == nil
+
+puts "\nconditional search:"
+node, count = tree.conditional_search(target)
+puts "searched #{count} nodes for #{target}, found #{node.value}"
+node, count = tree.conditional_search(101)
+puts "searched #{count} nodes for 101, found nil" if node == nil

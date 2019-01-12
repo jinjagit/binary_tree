@@ -15,9 +15,11 @@ end
 class Tree
   attr_reader :size
 
-  def initialize
+  def initialize(ary = nil)
     @root = nil
     @size = 0
+    @ary = ary
+    build_tree ary
   end
 
   def add_node(value)
@@ -47,6 +49,12 @@ class Tree
       @size += 1
     end
   end
+
+  def build_tree(ary)
+    return nil if ary == nil
+    ary.each {|e| add_node(e)}
+    ary
+  end
 end
 
 
@@ -57,6 +65,5 @@ ary = []
 p ary
 puts "input: #{ary.length} integers"
 
-tree = Tree.new
-ary.each {|e| tree.add_node(e)}
+tree = Tree.new(ary)
 puts "tree has #{tree.size} nodes"

@@ -1,6 +1,12 @@
 IN PROGRESS - Simon Tharby's solution to [Binary Tree exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
 
-#### Instructions
+#### My Implementation (divergence from, & additions to, instructions):
+
+I implemented separate <code>Node</code> and <code>Tree</code> classes, not only a <code>Node</code> class (as instructed), as this seemed more logical to me.
+
+My <code>Tree</code> class build a binary search tree on initialization, if an array is passed into <code>Tree.new(ary)</code>.
+
+#### Instructions:
 
 You’ll build a simple binary tree data structure from some arbitrary input and also the “crawler” function that will locate data inside of it.
 

@@ -23,7 +23,7 @@ class Tree
   def add_node(value)
     if @root == nil
       @root = Node.new(value)
-      @size += 1
+      @size = 1
     else
       node = @root
       added = false
@@ -49,12 +49,14 @@ class Tree
   end
 end
 
+
+# --------- create tree from array of data and search (dfs & bfs) ----------
+
 ary = []
 20.times {ary << rand(99)}
 p ary
+puts "input: #{ary.length} integers"
 
 tree = Tree.new
-
 ary.each {|e| tree.add_node(e)}
-
-p tree.size
+puts "tree has #{tree.size} nodes"

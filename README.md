@@ -1,5 +1,7 @@
 IN PROGRESS - Simon Tharby's solution to [Binary Tree exercise](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms?ref=lnav), Odin Project:
 
+#### Instructions
+
 You’ll build a simple binary tree data structure from some arbitrary input and also the “crawler” function that will locate data inside of it.
 
 1.  Build a class Node. It should have a value that it stores and also links to its parent and children (if they exist) [**note: I am pretty sure a link to a parent, and will proceed with only using links to child nodes**]. Build getters and setters for it (e.g. parent node, child node(s)).

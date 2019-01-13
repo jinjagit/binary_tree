@@ -123,7 +123,7 @@ class Tree
         return nil, count if node.l_child.nil?
         node = node.l_child
       elsif node.value < value
-        return nil if node.r_child.nil?
+        return nil, count if node.r_child.nil?
         node = node.r_child
       end
     end

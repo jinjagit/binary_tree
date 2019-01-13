@@ -105,8 +105,9 @@ class Tree
 
   # return dfs_rec result and number of times dfs_rec called itself
   def dfs_rec_count(value)
-    @count = 1
+    @count = 0
     node = dfs_rec(value)
+    @count = 1 if @count == 0
     return node, @count
   end
 

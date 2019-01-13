@@ -105,7 +105,7 @@ class Tree
 
   # return dfs_rec result and number of times dfs_rec called itself
   def dfs_rec_count(value)
-    @count = 0
+    @count = 1
     node = dfs_rec(value)
     return node, @count
   end
@@ -120,10 +120,10 @@ class Tree
       if node.value == value
         match = true
       elsif node.value > value
-        return nil if node.l_child.nil?
+        return nil, count if node.l_child.nil?
         node = node.l_child
       elsif node.value < value
-        return nil if node.r_child.nil?
+        return nil, count if node.r_child.nil?
         node = node.r_child
       end
     end

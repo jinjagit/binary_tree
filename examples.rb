@@ -59,8 +59,8 @@ puts "searched #{count} nodes for 101, found nil" if node == nil
 # => searched 20 nodes for 101, found nil
 
 # => depth first recursive search:
-# => searched 7 nodes for 47, found 47
-# => searched 20 nodes for 101, found nil
+# => searched for 47, found 47
+# => searched for 101, found nil
 
 # => conditional search:
 # => searched 5 nodes for 47, found 47

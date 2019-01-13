@@ -10,7 +10,7 @@ I implemented separate <code>Node</code> and <code>Tree</code> classes, rather t
 
 The <code>Tree</code> class builds an unbalanced binary search tree on initialization of a new instance, from an unsorted array passed into <code>Tree.new(ary)</code>.
 
-Although the exercise of building search methods (breadth or depth first) that search all nodes is interesting and challenging, such methods do not leverage the structure that is created when building the tree. Thus, I also wrote a conditional search that takes advantage of the tree structure.
+Although the exercise of building search methods (breadth or depth first) that search all nodes is interesting and challenging, such methods do not leverage the structure (order) that is created when building the tree. Thus, I also wrote a conditional search that takes advantage of the tree structure.
 
 I measured the time complexity by comparing all search methods over multiple searches (see <code>time.rb</code>). This is why all my search methods contain a counter (to count the number of nodes visited in finding a target value).
 

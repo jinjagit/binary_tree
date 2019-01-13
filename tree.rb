@@ -18,7 +18,6 @@ class Tree
   def initialize(ary = nil)
     @root = nil
     @size = 0
-    @rec_count = 0
     build_tree ary
   end
 
@@ -99,16 +98,7 @@ class Tree
     return node if node.value == value
     result = dfs_rec(node.l_child, value)
     return result unless result.nil?
-    @count += 1 # counter for analysis, not needed for search
     dfs_rec(node.r_child, value)
-  end
-
-  # return dfs_rec result and number of times dfs_rec called itself
-  def dfs_rec_count(value)
-    @count = 0
-    node = dfs_rec(value)
-    @count = 1 if @count == 0
-    return node, @count
   end
 
   def conditional_search(value)

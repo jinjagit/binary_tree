@@ -31,8 +31,6 @@ conditional_search = []
   bfs_search << count / 200.0
   node, count = tree.depth_first_search(target)
   dfs_search << count / 200.0
-  node, count = tree.dfs_rec_count(target)
-  dfs_rec_search << count / 200.0
   node, count = tree.conditional_search(target)
   conditional_search << count / 200.0
 end
@@ -40,13 +38,11 @@ end
 ary_average = (ary_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
 bfs_average = (bfs_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
 dfs_average = (dfs_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
-dfs_rec_average = (dfs_rec_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
 conditional_average = (conditional_search.inject(0){|sum,x| sum + x } / 1000.0).round(3)
 
 puts "        array search v / n = #{ary_average}"
 puts "breadth first search v / n = #{bfs_average}"
 puts "  depth first search v / n = #{dfs_average}"
-puts "       recursive dfs v / n = #{dfs_rec_average}"
 puts "  conditional search v / n = #{conditional_average}"
 
 # --------------------- example output --------------------------------
@@ -54,7 +50,6 @@ puts "  conditional search v / n = #{conditional_average}"
 # =>         array search v / n = 0.473
 # => breadth first search v / n = 0.489
 # =>   depth first search v / n = 0.497
-# =>        recursive dfs v / n = 0.473
 # =>   conditional search v / n = 0.043
 
 

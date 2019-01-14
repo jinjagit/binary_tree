@@ -14,7 +14,7 @@ Although the exercise of building search methods (breadth or depth first) that s
 
 I measured the time complexity by comparing all search methods over multiple searches (see <code>time.rb</code>). This is why my (non-recursive) search methods contain a counter (to count the number of nodes visited in finding a target value).
 
-As expected, using breadth or depth first searches resulted in an average of n/2 operations (if you have no guide as to where a value might be / not be, on average you will find it half-way though a search of all elements). The conditional search was much faster (more than 10 times less elements searched for arrays of 200 elements). This roughly confirms the expected Ologn result  (vs n/2 for the slower search methods).
+As expected, using breadth or depth first searches resulted in an average of n/2 operations (if you have no guide as to where a value might be / not be, on average you will find it half-way though a search of all elements). The conditional search was much faster (more than 10 times less elements searched for arrays of 200 elements). This confirms the expected Ologn result (vs n/2 for the slower search methods).
 
 ### Instructions:
 
